@@ -3,9 +3,22 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Play, Calendar, MapPin, X } from 'lucide-react';
 
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  location: string;
+  date: string;
+  description: string;
+  beforeImage: string;
+  afterImage: string;
+  video: string | null;
+  gallery: string[];
+}
+
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = [
     { id: 'all', name: 'Toate' },
